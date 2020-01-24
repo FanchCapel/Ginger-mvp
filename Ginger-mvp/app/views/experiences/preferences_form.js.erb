@@ -1,0 +1,21 @@
+function showCategories(formHTML) {
+  const form = document.getElementById('preferences-form');
+  form.innerHTML = "";
+  form.insertAdjacentHTML('beforeend', formHTML);
+}
+
+function changeMessage(messageText) {
+  const preferenceMessage = document.getElementById("preference-message");
+  preferenceMessage.innerText = "";
+  preferenceMessage.innerText = messageText;
+}
+
+
+if (<%= @slider %> === 1) {
+  showCategories('<%= j render "shared/experience_preferences_categories_form", experience: @experience, experience_preferences_category: @experience_preferences_category, collection: Category.all %>');
+  changeMessage("Bridget Jones: cochez les expériences que vous ne voulez PAS FAIRE. Ginger s'occupe du reste.");
+} else {
+  showCategories('<%= j render "shared/experience_preferences_categories_form", experience: @experience, experience_preferences_category: @experience_preferences_category, collection: [] %>');
+  changeMessage("Indiana Jones: Ginger choisit pour vous pour une surprise totale.");
+}
+

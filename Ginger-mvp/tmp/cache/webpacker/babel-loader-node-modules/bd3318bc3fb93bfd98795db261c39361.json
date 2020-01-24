@@ -1,0 +1,1 @@
+{"ast":null,"code":"import \"bootstrap\";\nimport \"../components/selector_events\";","map":{"version":3,"sources":["/Users/francoiscapel/code/ginger/Ginger/app/javascript/packs/application.js"],"names":[],"mappings":"AAAA,OAAO,WAAP;AACA,OAAO,+BAAP","sourcesContent":["import \"bootstrap\";\nimport \"../components/selector_events\"\n"]},"metadata":{},"sourceType":"module"}

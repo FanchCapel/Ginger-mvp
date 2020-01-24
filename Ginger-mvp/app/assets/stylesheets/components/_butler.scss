@@ -1,0 +1,201 @@
+#butler-image {
+  height: 100px;
+}
+
+#butler-image-home {
+  height: 80px;
+}
+
+
+// .form:before {
+//     content: '';
+//     height:           100%;
+//     left:             0;
+//     position:         absolute;
+//     top:              0;
+//     width:            100%;
+//     background-color: rgba(0,0,0,0.4);
+//     z-index:          -1;
+//     border-radius:    10px;
+// }
+
+#butler-container {
+  background-color: rgba(0,0,0,0.4);
+  // height: 325px;
+  // width: auto;
+  border-radius: 20px;
+  min-width: 60%;
+  margin-top: 10px;
+}
+
+#butler-container-home {
+  background-color: rgba(0,0,0,0.4);
+  // height: 325px;
+  // width: auto;
+  border-radius: 20px;
+  width: 500px;
+  z-index: 2;
+  margin-left: 10px !important;
+  bottom: 0;
+}
+
+.exp-text p {
+  font-size: 20px;
+  text-align: center;
+  width: auto;
+}
+
+.exp-text-home p {
+  font-size: 14px;
+  text-align: center;
+  width: auto;
+}
+
+.ginger-img {
+  text-align: center;
+}
+
+.experience-title {
+  text-align: center;
+  margin-top: 12vh;
+}
+
+.typewriter p {
+  width: 0;
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 2.2s steps(30, end),
+    blink-caret .5s step-end infinite;
+    animation-fill-mode: forwards;
+}
+
+// .typewriter p:before {
+//   width: 0
+// }
+
+.typewriter p:nth-child(2) {
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+
+}
+.typewriter p:nth-child(3) {
+  animation-delay: 3.7s;
+  animation-fill-mode: forwards;
+}
+.typewriter p:nth-child(4) {
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+.typewriter p:nth-child(5) {
+  animation-delay: 6.5s;
+  animation-fill-mode: forwards;
+}
+.typewriter p:nth-child(6) {
+  animation-delay: 7.8s;
+  animation-fill-mode: forwards;
+}
+.typewriter p:nth-child(7) {
+  animation-delay: 9s;
+  animation-fill-mode: forwards;
+  margin-top: 10px;
+}
+
+/* The typing effect */
+@keyframes typing {
+  0% { width: 0 }
+  100% { width: 100% }
+}
+
+// typewriter for payments_new
+
+.typewriter-new p {
+  width: 0;
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 2.2s steps(30, end),
+    blink-caret .5s step-end infinite;
+    animation-fill-mode: forwards;
+}
+
+// .typewriter p:before {
+//   width: 0
+// }
+
+.typewriter-new p:nth-child(2) {
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+
+}
+.typewriter-new p:nth-child(3) {
+  animation-delay: 3.2s;
+  animation-fill-mode: forwards;
+}
+.typewriter-new p:nth-child(4) {
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+.typewriter-new p:nth-child(5) {
+  animation-delay: 6.8s;
+  animation-fill-mode: forwards;
+}
+.typewriter-new p:nth-child(6) {
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
+}
+.typewriter-new p:nth-child(7) {
+  animation-delay: 9.3s;
+  animation-fill-mode: forwards;
+  margin-top: 10px;
+}
+
+.typewriter-home p {
+  width: 0;
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 2.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+    animation-fill-mode: forwards;
+}
+
+// .typewriter p:before {
+//   width: 0
+// }
+
+.typewriter-home p:nth-child(2) {
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+
+}
+.typewriter-home p:nth-child(3) {
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+.typewriter-home p:nth-child(4) {
+  animation-delay: 7.5s;
+  animation-fill-mode: forwards;
+}
+.typewriter-home p:nth-child(5) {
+  animation-delay: 9.5s;
+  animation-fill-mode: forwards;
+}
+.typewriter-home p:nth-child(6) {
+  animation-delay: 11s;
+  animation-fill-mode: forwards;
+}
+.typewriter-home p:nth-child(7) {
+  animation-delay: 13s;
+  animation-fill-mode: forwards;
+  margin-top: 10px;
+}
