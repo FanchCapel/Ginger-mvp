@@ -1,0 +1,70 @@
+<div class="admin">
+  <h2>Resumé des Experiences</h2>
+    <div class="headers row align-middle">
+      <div class="col-lg-2 d-flex align-items-center justify-content-start">Utilisateur</div>
+      <div class="col-lg-1 d-flex align-items-center justify-content-around">Ville<br>Budget</div>
+      <div class="col-lg-1 d-flex align-items-center justify-content-around">Date<br>Heure</div>
+      <div class="col-lg-6 d-flex align-items-center justify-content-around">Activités</div>
+      <div class="status col-lg-1 px-0">
+        <div>Statut</div>
+        <div class="sub-status d-flex align-items-center justify-content-around px-0">
+          <div class="status-paid">Payé?</div>
+          <div class="status-prepared">Prep?</div>
+        </div>
+      </div>
+      <div class="col-lg-1 d-flex align-items-center justify-content-end">Preparer</div>
+    </div>
+    <% @experiences.each do |experience| %>
+      <div class="row experience-card">
+        <div class="user-info d-flex align-items-center col-lg-2">
+          <%= "#{experience.user.primary_first_name.capitalize} #{experience.user.primary_last_name.capitalize}" %>
+        </div>
+        <div class="experience-info-location col-lg-1">
+          <div class="d-flex align-items-center">
+            <%= experience.city %> <br>
+            <%= "#{experience.budget_cents} CHF" %>
+          </div>
+        </div>
+        <div class="experience-info-datetime col-lg-1">
+          <div><%= experience.date.strftime("%d/%m/%Y") %></div>
+          <% if experience.time_slot == "en soirée" %>
+            <div><span class="fas fa-moon fa-lg"></span></div>
+          <% else %>
+            <div><span class="fas fa-sun fa-lg"></span></div>
+          <% end %>
+        </div>
+        <div class="activities col-lg-6">
+          <div class="row">
+            <% @experience_slices.select { |experience_slice| experience_slice.experience == experience }.each do |experience_slice| %>
+              <div class="d-flex align-items-center justify-content-center col-lg-4">
+                <%= experience_slice.activity.name %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-around experience-status col-lg-1">
+          <% if experience.paid_at.nil? %>
+            <span class="experience-unpaid"><i class="fas fa-money-bill-alt fa-2x mr-3"></i></span>
+          <% else %>
+            <span class="experience-paid"><i class="fas fa-money-bill-alt fa-2x mr-3"></i></span>
+          <% end %>
+          <% if experience.prepared_at.nil? %>
+            <span class="experience-unprepared"><i class="fas fa-2x fa-tasks"></i></span>
+          <% else %>
+            <span class="experience-prepared"><i class="fas fa-2x fa-tasks"></i></span>
+          <% end %>
+        </div>
+        <div class="d-flex align-items-center justify-content-end experience-actions col-lg-1">
+          <% if experience.prepared_at.nil? && !experience.paid_at.nil? %>
+            <%= link_to new_experience_experience_slice_path(experience) do %>
+              <span><i class="fas fa-2x fa-edit"></i></span>
+            <% end %>
+          <% end %>
+          <% if experience.date < Date.today %>
+            <span><i class="fas fa-2x fa-check"></i></span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </table>
+</div>

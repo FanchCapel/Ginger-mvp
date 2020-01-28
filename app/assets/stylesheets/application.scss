@@ -1,0 +1,27 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+@import "experience_slices/new";
+@import "experiences/admin_index";
+@import "experiences/index";
+@import "experiences/show";
+@import "payments/new";
+@import "experience_preferences_categories/new";
+
+
+// Main application CSS
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - #{$navbarHeight} - #{$footerHeight});
+}

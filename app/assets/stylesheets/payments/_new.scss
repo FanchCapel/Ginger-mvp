@@ -1,0 +1,31 @@
+.ginger-text p {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  background-color: white;
+  margin-top: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 7px;
+  border-radius: 6px;
+  color: black;
+  padding: 20px;
+}
+
+.ginger-text p::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: -23px;
+  width: 30px;
+  height: 25px;
+  background: radial-gradient(circle at top right, transparent 58%, white 60%);
+}
+
+.pay-btn {
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+padding: 20px;
+}
