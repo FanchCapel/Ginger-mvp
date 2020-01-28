@@ -1,0 +1,82 @@
+.form-height {
+  min-height: 100vh;
+}
+
+.form_title {
+  margin: 80px  30px ;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.form {
+  color:       white;
+  margin-left: 5vw;
+  margin-top:  50px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+}
+
+.form-corrections {
+  padding: 0 !important;
+}
+
+.banner-exp {
+  background-image:      asset-url("dance.png");
+  height:                100vh;
+  position:              relative;
+  background-attachment: fixed;
+  background-position:   center;
+  background-repeat:     no-repeat;
+  background-size:       cover;
+}
+
+
+.banner-exp .logo {
+  width:    400px;
+  position: absolute;
+  bottom:   0px;
+  left:     calc(50vw - 200px);
+}
+
+
+.login-up {
+  text-align: center;
+  color:      white;
+  font-size:  50px;
+}
+
+#cover {
+    background:      #222 asset-url('hand-in-hand.jpg') center center no-repeat;
+    background-size: cover;
+    height:          100%;
+    display:         flex;
+    align-items:     center;
+    position:        relative;
+}
+
+#cover-caption {
+    width:    100%;
+    position: relative;
+    z-index:  1;
+}
+
+/* only used for background overlay not needed for centering */
+form:before {
+    content: '';
+    height:           100%;
+    left:             0;
+    position:         absolute;
+    top:              0;
+    width:            100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index:          -1;
+    border-radius:    10px;
+}
+
+.box {
+  margin-top: 15px;
+  border-top: 1px solid rgba(50,50,50,0.3);
+  width:      100%;
+  text-align: right;
+}
+

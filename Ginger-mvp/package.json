@@ -1,0 +1,16 @@
+{
+  "name": "Ginger",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^4.2.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap-slider": "^10.6.2",
+    "flatpickr": "^4.6.3",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
+    "sortablejs": "^1.10.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.9.0"
+  }
+}
