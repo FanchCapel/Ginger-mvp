@@ -1,0 +1,48 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background:      transparent;
+  height:          $navbarHeight;
+  z-index: 10;
+  width: 100%;
+  color: $ginger;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.nav-link {
+  color: white;
+  // color: #E1DCD5;
+}
+
+.navbar-brand {
+  flex-grow: 1;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.nav-text {
+color: white;
+
+}
+
+#navbarDropdownMenuLink-333 {
+  color: $ginger;
+  :hover {
+    color: white;
+  }
+}
+
+#login {
+  color: $ginger;
+}
+
+// .navbar-default{
+//   background:transparent;
+//   background-image:none;
+//   border-color:transparent;
+//   box-shadow:none;
+// }

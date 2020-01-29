@@ -1,0 +1,145 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:700');
+
+/* Fontawesome */
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+/* Utilities */
+body {
+  margin: 0;
+  font-family: Open Sans;
+  background-color: $background-color;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+}
+
+h1 {
+  font-size: 50px;
+  color: white;
+}
+
+h2 {
+  font-size : 50px;
+  color: $ginger;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-s p {
+  font-size: 25px;
+}
+
+.surprise-banner {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('surprise.png');
+  height: 100vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.surprise-banner .logo {
+  max-width: 400px;
+  position: absolute;
+  bottom: -20px;
+  left: calc(50vw - 200px);
+}
+
+.container-s {
+  position: absolute;
+  width: 80vw;
+  margin-top: 15vh;
+  text-align: center;
+  color: white;
+  z-index: 2;
+
+}
+
+.container-s .form-check{
+  text-align: left;
+  margin-left: 20px;
+
+}
+
+#confort-btn {
+  margin-bottom: 40px !important;
+}
+
+
+.preferences {
+  color: white;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.slider-form {
+  // color: white;
+}
+
+.namerange {
+  color: $ginger;
+  font-size: 26px;
+}
+
+.smallbtn {
+  margin-top: 50px;
+  width: 250px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: $ginger;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: $ginger;
+  cursor: pointer;
+}
+
+.checklistexp {
+  background-color: white;
+  opacity: 0.5;
+
+}
+
+.experience_preferences_category_category {
+  color: red;
+  display: flex;
+}
+
+.form-check-label.collection_check_boxes {
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
