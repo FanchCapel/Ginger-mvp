@@ -1,8 +1,0 @@
-<%= simple_form_for [@experience, @experience_slice] do |f| %>
-  <div class="d-flex">
-    <%= f.input :activity, collection: @activities, label: "Veuillez choisir la premiere activité", input_html: { name: 'experience_slice[activity_1]', class: "act" } %>
-    <%= f.input :activity, collection: @activities, label: "Veuillez choisir la deuxieme activité", input_html: { name: 'experience_slice[activity_2]', class: "act" } %>
-    <%= f.input :activity, collection: @activities, label: "Veuillez choisir la troisieme activité", input_html: { name: 'experience_slice[activity_3]', class: "act" } %>
-  </div>
-  <%= f.button :submit, class: "btn btn-primary", value: "Finaliser l'experience" %>
-<% end %>
