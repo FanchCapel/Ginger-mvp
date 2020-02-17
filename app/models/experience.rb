@@ -7,6 +7,7 @@ class Experience < ApplicationRecord
   validates :city, presence: true
   validates :date, presence: true
   validates :time_slot, presence: true
+  validates :experience_type, presence: true
 
   belongs_to :user
 
