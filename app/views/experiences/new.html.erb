@@ -2,6 +2,21 @@
   <%= image_tag "logo-1.png", :class => "logo"%>
   <h1 class="form_title">Laissez nous vous préparer l'expérience parfaite</h1>
 
+  <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-1 align-items-center" id="new-butler-container-home">
+  <div class="ginger-img">
+    <%= image_tag "ginger-butler.png", id: 'butler-image-home'%>
+  </div>
+  <div class="px-2">
+    <div class="justify-content-center">
+      <div class="exp-text-home typewriter-home">
+        <p>Malheureusement, les 2 options ne sont pas encore disponibles.</p>
+        <p>Mais j'y travaille !</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <div class="container-g", style="width: 400px;">
     <%= simple_form_for @experience do |f| %>
       <%= f.input :city,
@@ -35,3 +50,4 @@
     <% end %>
   </div>
 </div>
+

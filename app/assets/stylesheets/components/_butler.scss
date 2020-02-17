@@ -39,6 +39,19 @@
   bottom: 0;
 }
 
+#new-butler-container-home {
+  background-color: rgba(0,0,0,0.4);
+  // height: 325px;
+  // width: auto;
+  display: none;
+  border-radius: 20px;
+  width: 700px;
+  z-index: 2;
+  margin-left: 10px !important;
+  // bottom: 25px;
+  left: 350px;
+}
+
 .exp-text p {
   font-size: 20px;
   text-align: center;

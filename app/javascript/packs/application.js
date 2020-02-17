@@ -11,6 +11,7 @@ export const selectedExperienceType = () => {
 		bothSelected.disabled = true;
 		document.getElementById('experience_experience_type_2').checked = true;
 		document.getElementById('experience_both_experiences_selected').value = true;
+		document.getElementById('new-butler-container-home').classList.add('d-flex');
 	})
 }
 
