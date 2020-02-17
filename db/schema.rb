@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_153407) do
+ActiveRecord::Schema.define(version: 2020_02_17_212442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2020_02_17_153407) do
     t.string "checkout_session_id"
     t.integer "preference_level"
     t.integer "experience_type"
+    t.boolean "both_experiences_selected", default: false
     t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 

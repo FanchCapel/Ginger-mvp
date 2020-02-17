@@ -10,6 +10,7 @@ export const selectedExperienceType = () => {
 	bothSelected.addEventListener('click', (event) => {
 		bothSelected.disabled = true;
 		document.getElementById('experience_experience_type_2').checked = true;
+		document.getElementById('experience_both_experiences_selected').value = true;
 	})
 }
 
