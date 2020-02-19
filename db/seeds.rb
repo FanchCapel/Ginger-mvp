@@ -1,8 +1,8 @@
 require 'csv'
 require 'faker'
 
-CATEGORIES = ['Foodie', 'Sport', 'Artistique', 'Divertissante', 'Fun', 'Relaxante', 'Romantique', 'Concert', 'Nature', 'Culture']
-CITIES = Experience::CITY
+CATEGORIES = ["restaurant", "expérience", "les deux (expérience + restaurant)"]
+# CITIES = Experience::CITY
 TIME_SLOTS = ["en aprem", "en soirée"]
 BUDGETS = [150, 200, 250, 300, 350, 400, 450, 500]
 PREF_LEVELS = [1, 2]
@@ -48,7 +48,6 @@ file_path = File.dirname(__FILE__) + "/seeds.csv"
 csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
 
 CSV.foreach(file_path, csv_options) do |row|
-  # binding.pry
   activity = Activity.create!({
     name: row["Name"],
     meeting_point: row["Meeting point"],
@@ -64,63 +63,11 @@ end
 puts "Done"
 
 
-puts "Creating users..."
-User.create!(email:"alain.fresco@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Alain", primary_last_name: "Fresco")
-User.create!(email:"francois.capel@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', admin: true, primary_first_name: "Francois", primary_last_name: "Capel")
-User.create!(email:"sinan.ucak@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', admin: true, primary_first_name: "Sinan", primary_last_name: "Ucak")
-User.create!(email:"nathan.tempels@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', admin: true, primary_first_name: "Nathan", primary_last_name: "Tempels")
-User.create!(email:"clara.leroux@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Clara", primary_last_name: "Le Roux")
-User.create!(email:"thibault.jaime@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Thibault", primary_last_name: "Jaime")
-User.create!(email:"nicholas.hendrickson@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Nicholas", primary_last_name: "Hendrickson")
-User.create!(email:"alessandro.bucarelli@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Alessandro", primary_last_name: "Bucarelli")
-User.create!(email:"cecile.colombo@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Cecile", primary_last_name: "Colombo")
+puts "Creating admins..."
+User.create!(email:"fanch.capel@gmail.com",password:"FanchGingerAdmin",password_confirmation:"FanchGingerAdmin", primary_number: '0795360618',secondary_number: '0795360618', admin: true, primary_first_name: "Francois", primary_last_name: "Capel")
 puts "Done"
-
-puts "Creating experiences..."
-10.times do
-  experience = Experience.new(user: User.all.sample, city: CITIES.sample, date: Time.zone.today + Faker::Number.within(range: 1..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample)
-  experience.save
-  random_sample = [0, 1, 2].sample
-  if random_sample == 1
-    experience.update!(paid_at: Time.zone.today - Faker::Number.within(range: 20..30).day)
-  elsif random_sample == 2
-    activities = Activity.all.sample(3)
-    ExperienceSlice.create!(experience: experience, activity: activities[0], order: 1)
-    ExperienceSlice.create!(experience: experience, activity: activities[1], order: 2)
-    ExperienceSlice.create!(experience: experience, activity: activities[2], order: 3)
-    experience.update!(prepared_at: Time.zone.today - Faker::Number.within(range: 10..20).day)
-    experience.update!(paid_at: Time.zone.today - Faker::Number.within(range: 20..30).day)
-  end
-end
-20.times do
-  experience = Experience.new(user: User.all.sample, city: CITIES.sample, date: Time.zone.today - Faker::Number.within(range: 1..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample, prepared_at: Time.zone.today - Faker::Number.within(range: 30..40).day, paid_at: Time.zone.today - Faker::Number.within(range: 40..50).day)
-  experience.save!
-  activities = Activity.all.sample(3)
-  ExperienceSlice.create!(experience: experience, activity: activities[0], order: 1)
-  ExperienceSlice.create!(experience: experience, activity: activities[1], order: 2)
-  ExperienceSlice.create!(experience: experience, activity: activities[2], order: 3)
-  experience.update!(prepared_at: Time.zone.today - Faker::Number.within(range: 10..20).day)
-  experience.update!(paid_at: Time.zone.today - Faker::Number.within(range: 20..30).day)
-end
-puts "Done"
-
-puts "Creating experience preferences categories..."
-15.times do
-  experience = Experience.all.sample
-  if experience.preference_level.nil?
-    experience.preference_level = PREF_LEVELS.sample
-    if experience.preference_level = 2
-      [1, 2, 3].sample.times do
-        ExperiencePreferencesCategory.create!(experience: experience, category: Category.all.sample)
-      end
-    end
-  end
-end
-puts "Done"
-
 
 # ---------------------- CREATE MESSAGE FOR PRODUCTION (SCROLL FOR DEMO)-----------------------------------
-
 
 # puts "Creating message types..."
 # # Message 1
@@ -234,21 +181,3 @@ puts "Creating message types..."
 # @messageType.content = "Votre expérience touche à sa fin! Il est temps pour moi de vous souhaiter une bonne fin d expérience, en souhaitant vous revoir bientôt! Votre majordome, Ginger"
 # @messageType.save!
 puts "Done"
-
-# ---------------------------- Create Nathan and his experiences ------------------------------------------------------
-puts "Creating Francois..."
-User.create!(email:"fanch_cap@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Francois", primary_last_name: "Capel")
-3.times do
-  experience = Experience.new(user: User.last, city: "Lausanne", date: Time.zone.today - Faker::Number.within(range: 10..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample, prepared_at: Time.zone.now - Faker::Number.within(range:30..40).day, paid_at: Time.zone.now - Faker::Number.within(range:40..60).day)
-  activities = Activity.all.sample(3)
-  experience.save!
-  ExperienceSlice.create!(experience: experience, activity: activities[0], order: 1)
-  ExperienceSlice.create!(experience: experience, activity: activities[1], order: 2)
-  ExperienceSlice.create!(experience: experience, activity: activities[2], order: 3)
-end
-puts "Francois done."
-
-
-
-
-
