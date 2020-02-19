@@ -1,6 +1,7 @@
 <div class="banner-exp">
   <%= image_tag "logo-1.png", :class => "logo"%>
   <h1 class="form_title">Laissez nous vous préparer l'expérience parfaite</h1>
+  <h2 class="form_title"> (Attention, uniquement pour la ville de Lausanne et ses environs proches)</h2>
 
   <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-1 align-items-center" id="new-butler-container-home">
   <div class="ginger-img">
@@ -46,6 +47,7 @@
       <%= f.input :budget_cents,
         label: 'Votre budget',
         collection: [["150 CHF", 150], ["200 CHF", 200], ["250 CHF", 250], ["300 CHF", 300], ["350 CHF", 350], ["400 CHF", 400], ["450 CHF", 450], ["500 CHF", 500], ]%>
+
       <%= f.button :submit, class: 'btn-g', value: "Créer l'Experience" %>
     <% end %>
   </div>
