@@ -40,7 +40,7 @@ class ExperiencesController < ApplicationController
         )
 
         @experience.update(checkout_session_id: session.id)
-        redirect_to new_experience_experience_preferences_category_path(@experience)
+        redirect_to new_experience_payment_path(@experience)
       else
         render :new
       end
@@ -75,6 +75,14 @@ class ExperiencesController < ApplicationController
   private
 
   def experience_params
-    params.require(:experience).permit(:user, :budget_cents, :city, :date, :time_slot)
+    params.require(:experience).permit(
+      :user,
+      :budget_cents,
+      :city,
+      :date,
+      :time_slot,
+      :experience_type,
+      :both_experiences_selected
+    )
   end
 end
