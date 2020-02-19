@@ -1,6 +1,6 @@
 class Experience < ApplicationRecord
 
-  # CITY = ["Lausanne", "Geneve", "Fribourg", "Sion", "Neuchatel"]
+  CITY = ["Lausanne"]
 
   validates :user_id, presence: true
   validates :budget_cents, presence: true
