@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+# verb 'path', to: 'controller#action', as: :route_name
+
   get 'messages/create'
   devise_for :users, controllers: { registrations: "registrations" }
   mount StripeEvent::Engine, at: '/stripe-webhooks'

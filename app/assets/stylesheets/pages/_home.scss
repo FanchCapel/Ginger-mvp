@@ -89,6 +89,7 @@ p {
   display: flex;
   justify-content: space-around;
   text-align: center;
+  margin-bottom: 100px;
 
 }
 .card {
@@ -132,3 +133,32 @@ p {
 .form-boxes {
   margin-right: 0px;
 }
+
+.faq-module {
+  p {
+    font-size: 25px;
+  }
+  color: $ginger;
+  margin-top: 20px;
+}
+
+.ui-grid-container {
+
+  width: 95%;
+  min-width: 288px;
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  color: $ginger;
+}
+
+.ui-qanda {
+  text-align: left;
+  font-size: 15px;
+  p {
+    font-size: 15px;
+  }
+}
+
+
+
