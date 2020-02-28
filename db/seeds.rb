@@ -69,38 +69,38 @@ puts "Done"
 
 # ---------------------- CREATE MESSAGE FOR PRODUCTION (SCROLL FOR DEMO)-----------------------------------
 
-# puts "Creating message types..."
-# # Message 1
-# @messageType = MessageType.new
-# @messageType.message_type = "Day before"
-# @messageType.day = -1
-# @messageType.send_at = DateTime.parse('18:00:00')
-# @messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce' + message.experience.date.strftime(\'%d %m %y\') + '. Je vous donne donc rendez-vous demain à 18:30 à meeting . Ne pas oubliez pas de chager votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
-# @messageType.save!
+puts "Creating message types..."
+# Message 1
+@messageType = MessageType.new
+@messageType.message_type = "Day before"
+@messageType.day = -1
+@messageType.send_at = DateTime.parse('18:00:00')
+@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce' + message.experience.date.strftime(\'%d %m %y\') + '. Je vous donne donc rendez-vous à cette date à 18:30 ' + message.experience.experience_slices.activity.meeting_point + ' . Ne pas oubliez pas de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
+@messageType.save!
 
-# # Message 2
-# @messageType = MessageType.new
-# @messageType.message_type = "Teasing1"
-# @messageType.day = 0
-# @messageType.send_at = DateTime.parse('12:00:00')
-# @messageType.content = 'message.experience.experience_slice.find_by_order(1).activity.teasing1'
-# @messageType.save!
+# Message 2
+@messageType = MessageType.new
+@messageType.message_type = "Teasing1"
+@messageType.day = 0
+@messageType.send_at = DateTime.parse('12:00:00')
+@messageType.content = 'message.experience.experience_slice.activity.teasing1'
+@messageType.save!
 
-# # Message 3
-# @messageType = MessageType.new
-# @messageType.message_type = "Teasing2"
-# @messageType.day = 0
-# @messageType.send_at = DateTime.parse('15:00:00')
-# @messageType.content = 'message.experience.experience_slice.find_by_order(3).activity.teasing2'
-# @messageType.save!
+# Message 3
+@messageType = MessageType.new
+@messageType.message_type = "Teasing2"
+@messageType.day = 0
+@messageType.send_at = DateTime.parse('15:00:00')
+@messageType.content = 'message.experience.experience_slice.activity.teasing2'
+@messageType.save!
 
-# # Message 4
-# @messageType = MessageType.new
-# @messageType.message_type = "Welcome"
-# @messageType.day = 0
-# @messageType.send_at = DateTime.parse('18:30:00')
-# @messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' + message.experience.experience_slice.find_by_order(1).activity.instruction"
-# @messageType.save!
+# Message 4
+@messageType = MessageType.new
+@messageType.message_type = "Welcome"
+@messageType.day = 0
+@messageType.send_at = DateTime.parse('18:30:00')
+@messageType.content = 'message.experience.experience_slice.activity.instruction'
+@messageType.save!
 
 # # Message 5
 # @messageType = MessageType.new
@@ -118,33 +118,33 @@ puts "Done"
 # @messageType.content = "'Ce n\'est pas fini!' + message.experience.experience_slice.find_by_order(3).activity.teasing1'"
 # @messageType.save!
 
-# # Message 7
-# @messageType = MessageType.new
-# @messageType.message_type = "End"
-# @messageType.day = 0
-# @messageType.send_at = DateTime.parse('21:00:00')
-# @messageType.content = 'Votre expérience touche à sa fin! Il est temps pour moi de vous souhaiter une bonne fin d\'expérience, en souhaitant vous revoir bientôt! Votre majordome, Ginger'
-# @messageType.save!
-# puts "Done"
+# Message 7
+@messageType = MessageType.new
+@messageType.message_type = "End"
+@messageType.day = 0
+@messageType.send_at = DateTime.parse('18:30:00')+ Rational(message.experience.experience_slice.activity.duration, 1440)
+@messageType.content = 'Votre expérience se termine! J espère que vous avez aprécié? Merci de répondre à ce petit questionnaire pour nous aider à nous améliorer:  Il est maintenant temps pour moi de vous dire au revoir, en espérant vous revoir bientôt! Votre majordome, Ginger'
+@messageType.save!
+puts "Done"
 
 
 # ---------------------- CREATE MESSAGE FOR DEMO-----------------------------------
 
 
-puts "Creating message types..."
-# Message 1
-@messageType = MessageType.new
-@messageType.message_type = "Day before"
-@messageType.day = 1
-@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce ' + message.experience.date.strftime(\'%A %d %B\') + '. Je vous donne donc rendez-vous demain à 18:30 à ' + message.experience.experience_slices.find_by_order(1).activity.meeting_point + ' . N oubliez pas de charger votre téléphone et de vous équiper en cas de pluie! A très bientot pour de nouvelles instructions, Ginger.'"
-@messageType.save!
+# puts "Creating message types..."
+# # Message 1
+# @messageType = MessageType.new
+# @messageType.message_type = "Day before"
+# @messageType.day = 1
+# @messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce ' + message.experience.date.strftime(\'%A %d %B\') + '. Je vous donne donc rendez-vous demain à 18:30 à ' + message.experience.experience_slices.find_by_order(1).activity.meeting_point + ' . N oubliez pas de charger votre téléphone et de vous équiper en cas de pluie! A très bientot pour de nouvelles instructions, Ginger.'"
+# @messageType.save!
 
-# Message 2
-@messageType = MessageType.new
-@messageType.message_type = "Teasing1"
-@messageType.day = 2
-@messageType.content = "message.experience.experience_slices.find_by_order(1).activity.teasing1"
-@messageType.save!
+# # Message 2
+# @messageType = MessageType.new
+# @messageType.message_type = "Teasing1"
+# @messageType.day = 2
+# @messageType.content = "message.experience.experience_slices.find_by_order(1).activity.teasing1"
+# @messageType.save!
 
 # Message 3
 # @messageType = MessageType.new
@@ -153,12 +153,12 @@ puts "Creating message types..."
 # @messageType.content = "message.experience.experience_slices.find_by_order(3).activity.teasing2"
 # @messageType.save!
 
-# Message 4
-@messageType = MessageType.new
-@messageType.message_type = "Welcome"
-@messageType.day = 3
-@messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' + message.experience.experience_slices.find_by_order(1).activity.instruction"
-@messageType.save!
+# # Message 4
+# @messageType = MessageType.new
+# @messageType.message_type = "Welcome"
+# @messageType.day = 3
+# @messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' + message.experience.experience_slices.find_by_order(1).activity.instruction"
+# @messageType.save!
 
 # # Message 5 : ne fonctionne pas (pas reçu)
 # @messageType = MessageType.new
@@ -180,4 +180,5 @@ puts "Creating message types..."
 # @messageType.day = 7
 # @messageType.content = "Votre expérience touche à sa fin! Il est temps pour moi de vous souhaiter une bonne fin d expérience, en souhaitant vous revoir bientôt! Votre majordome, Ginger"
 # @messageType.save!
-puts "Done"
+
+# puts "Done"
