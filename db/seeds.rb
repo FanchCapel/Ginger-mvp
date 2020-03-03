@@ -83,7 +83,7 @@ puts "Creating message types..."
 @messageType.message_type = "Teasing1"
 @messageType.day = 0
 @messageType.send_at = DateTime.parse('12:00:00')
-@messageType.content = "'Bonjour c est Ginger. Bientôt prêts?' + message.experience.experience_slice.activity.teasing1'"
+@messageType.content = "'Bonjour c est Ginger. Bientôt prêts?' + message.experience.experience_slice.activity.teasing1"
 @messageType.save!
 
 # Message 3
@@ -99,7 +99,7 @@ puts "Creating message types..."
 @messageType.message_type = "Welcome"
 @messageType.day = 0
 @messageType.send_at = DateTime.parse('18:30:00')
-@messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' +  'message.experience.experience_slice.activity.instruction'"
+@messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' +  message.experience.experience_slice.activity.instruction"
 @messageType.save!
 
 # # Message 5
