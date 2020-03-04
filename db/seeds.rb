@@ -75,7 +75,7 @@ puts "Creating message types..."
 @messageType.message_type = "Day before"
 @messageType.day = -1
 @messageType.send_at = DateTime.parse('18:00:00')
-@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce' + message.experience.date.strftime(\'%d %m %y\') + '. Je vous donne donc rendez-vous à cette date à 18:30 ' + message.experience.experience_slices.activity.meeting_point + ' . Ne pas oubliez pas de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
+@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce' + message.experience.date.strftime(\'%d %m %y\') + '. Je vous donne donc rendez-vous à cette date à 18:30 ' + message.experience.experience_slices.activity.meeting_point + ' . Ne pas oublier de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
 @messageType.save!
 
 # Message 2
@@ -83,7 +83,7 @@ puts "Creating message types..."
 @messageType.message_type = "Teasing1"
 @messageType.day = 0
 @messageType.send_at = DateTime.parse('12:00:00')
-@messageType.content = 'message.experience.experience_slice.activity.teasing1'
+@messageType.content = "'Bonjour c est Ginger. Bientôt prêts?' + message.experience.experience_slice.activity.teasing1"
 @messageType.save!
 
 # Message 3
@@ -99,7 +99,7 @@ puts "Creating message types..."
 @messageType.message_type = "Welcome"
 @messageType.day = 0
 @messageType.send_at = DateTime.parse('18:30:00')
-@messageType.content = 'message.experience.experience_slice.activity.instruction'
+@messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' +  message.experience.experience_slice.activity.instruction"
 @messageType.save!
 
 # # Message 5
@@ -122,8 +122,8 @@ puts "Creating message types..."
 @messageType = MessageType.new
 @messageType.message_type = "End"
 @messageType.day = 0
-@messageType.send_at = DateTime.parse('18:30:00')+ Rational(message.experience.experience_slice.activity.duration, 1440)
-@messageType.content = 'Votre expérience se termine! J espère que vous avez aprécié? Merci de répondre à ce petit questionnaire pour nous aider à nous améliorer: <Link to form: https//forms.gle/R6DCLq5W6KNK6dnb7>. Il est maintenant temps pour moi de vous dire au revoir, en espérant vous revoir bientôt! Votre majordome, Ginger'
+@messageType.send_at = DateTime.parse('18:30:00') + Rational(message.experience.experience_slice.activity.duration, 1440)
+@messageType.content = 'Votre expérience se termine! J espère que vous avez apprécié? Merci de répondre à ce petit questionnaire pour nous aider à nous améliorer: <Link to form: https//forms.gle/LxTcSLniVGY441eW7>. Il est maintenant temps pour moi de vous dire au revoir, en espérant vous revoir bientôt! Votre majordome, Ginger.'
 @messageType.save!
 puts "Done"
 
