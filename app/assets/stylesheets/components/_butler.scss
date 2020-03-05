@@ -1,8 +1,8 @@
-p {
-  margin: 0 auto;
-  font-family: Open Sans;
-  font-size: 14px;
-}
+// p {
+//   margin: 0 auto;
+//   font-family: Open Sans;
+//   font-size: 14px;
+// }
 
 
 #butler-image {
@@ -11,6 +11,7 @@ p {
 
 #butler-image-home {
   height: 80px;
+  padding-top: 15px;
 }
 
 
@@ -48,14 +49,13 @@ p {
 
 #new-butler-container-home {
   background-color: rgba(0,0,0,0.4);
-  height: 90px;
-  width: auto;
+  height: 100px;
+  width: 400px;
   display: none;
   border-radius: 20px;
   // width: 700px !important;
   z-index: 2;
-  margin: 0 auto;
-  padding-right: 10px;
+  margin-left: -10px;
   // bottom: 25px;
   // left: 350px;
 }
@@ -64,6 +64,9 @@ p {
   padding-top: 10px;
   padding-left: 5px;
   padding-right: 5px;
+  padding-bottom: 10px;
+  width: 350px;
+  height: 200px;
 }
 
 .exp-text p {
