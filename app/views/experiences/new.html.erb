@@ -1,56 +1,59 @@
 <div class="banner-exp">
   <%= image_tag "logo-1.png", :class => "logo"%>
-  <h1 class="form_title mb-0">Laissez nous vous préparer l'expérience parfaite</h1>
-  <h2 class="ml-4", style="color: #FEA126; ">(Attention disponible sur Lausanne uniquement!)</h2>
-  <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-1 align-items-center" id="new-butler-container-home">
-  <div class="ginger-img">
-    <%= image_tag "ginger-butler.png", id: 'butler-image-home'%>
+  <div class="form_title mb-2">
+    <h1 class="mb-2">Laissez nous vous préparer l'expérience parfaite</h1>
+    <h2 class="mt-2, mx-0", style="color: #FEA126; ">(Attention disponible sur Lausanne uniquement!)</h2>
   </div>
-  <div class="px-2">
-    <div class="justify-content-center">
-      <div class="exp-text-home typewriter-home">
-        <p>Malheureusement, les 2 options ne sont pas encore disponibles.</p>
-        <p>Mais j'y travaille !</p>
-        <p >Merci de choisir entre une expérience OU un restaurant.</p>
+  <div class="container mt-20">
+    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-1 align-items-center" id="new-butler-container-home">
+    <div class="ginger-img">
+      <%= image_tag "ginger-butler.png", id: 'butler-image-home'%>
+    </div>
+    <div class="px-2">
+      <div class="justify-content-center">
+        <div class="exp-text-home typewriter-home">
+          <p>Malheureusement, les 2 options ne sont pas encore disponibles.</p>
+          <p>Mais j'y travaille !</p>
+          <p >Merci de choisir entre une expérience OU un restaurant.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
-  <div class="container-g", style="width: 400px;">
-    <%= simple_form_for @experience do |f| %>
-      <%= f.input :city,
-        label: 'La ville de votre expérience?',
-        collection: city = Experience::CITY,
-        selected: 1,
-        disabled: true %>
-      <%= f.input :city,
-        as: :hidden,
-        input_html: {value: city[0]} %>
-      <%= f.input :experience_type,
-        label: "Le type d'expérience que vous souhaitez faire?",
-        as: :radio_buttons,
-        collection: [['1', 'Une expérience'], ['2', 'Un restaurant'], ['3', 'Les deux combinés']],
-        label_method: :second,
-        value_method: :first,
-        wrapper: :vertical_collection_inline %>
-      <%= f.input :both_experiences_selected,
-        as: :hidden %>
-      <%= f.input :date,
-        as: :string,
-        input_html: {class: "datepicker"} %>
-      <%= f.input :time_slot,
-        label: 'A quel moment de la journée?',
-        as: :radio_buttons,
-        collection: ['En journée', 'En soirée'],
-        wrapper: :vertical_collection_inline%>
-      <%= f.input :budget_cents,
-        label: 'Votre budget',
-        collection: [["150 CHF", 150], ["200 CHF", 200], ["250 CHF", 250], ["300 CHF", 300], ["350 CHF", 350], ["400 CHF", 400], ["450 CHF", 450], ["500 CHF", 500], ]%>
+    <div class="container-g mt-20", style="width: 400px;">
+      <%= simple_form_for @experience do |f| %>
+        <%= f.input :city,
+          label: 'La ville de votre expérience?',
+          collection: city = Experience::CITY,
+          selected: 1,
+          disabled: true %>
+        <%= f.input :city,
+          as: :hidden,
+          input_html: {value: city[0]} %>
+        <%= f.input :experience_type,
+          label: "Le type d'expérience que vous souhaitez faire?",
+          as: :radio_buttons,
+          collection: [['1', 'Une expérience'], ['2', 'Un restaurant'], ['3', 'Les deux combinés']],
+          label_method: :second,
+          value_method: :first,
+          wrapper: :vertical_collection_inline %>
+        <%= f.input :both_experiences_selected,
+          as: :hidden %>
+        <%= f.input :date,
+          as: :string,
+          input_html: {class: "datepicker"} %>
+        <%= f.input :time_slot,
+          label: 'A quel moment de la journée?',
+          as: :radio_buttons,
+          collection: ['En journée', 'En soirée'],
+          wrapper: :vertical_collection_inline%>
+        <%= f.input :budget_cents,
+          label: 'Votre budget',
+          collection: [["150 CHF", 150], ["200 CHF", 200], ["250 CHF", 250], ["300 CHF", 300], ["350 CHF", 350], ["400 CHF", 400], ["450 CHF", 450], ["500 CHF", 500], ]%>
 
-      <%= f.button :submit, class: 'btn-g', value: "Créer l'expérience" %>
-    <% end %>
+        <%= f.button :submit, class: 'btn-g', value: "Créer l'expérience" %>
+      <% end %>
+    </div>
   </div>
 </div>
-

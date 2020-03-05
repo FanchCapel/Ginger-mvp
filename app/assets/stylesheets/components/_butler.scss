@@ -45,11 +45,12 @@
   // width: auto;
   display: none;
   border-radius: 20px;
-  width: 700px;
+  width: 700px !important;
   z-index: 2;
-  margin-left: 10px !important;
+  margin: 10px 10px 10px 350px !important;
+  padding-right: 10px;
   // bottom: 25px;
-  left: 350px;
+  // left: 350px;
 }
 
 .exp-text p {
@@ -79,7 +80,7 @@
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  // letter-spacing: .1em; /* Adjust as needed */
   animation:
     typing 2.2s steps(30, end),
     blink-caret .5s step-end infinite;

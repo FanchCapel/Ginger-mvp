@@ -1,3 +1,15 @@
+.container {
+  width: 90vw;
+  height: auto;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 10 px;
+  padding: 10 px;
+  box-sizing: border-box;
+
+}
+
 .form-height {
   min-height: 100vh;
 }
@@ -7,7 +19,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.form {
+.container .form {
   color:       white;
   margin-left: 5vw;
   margin-top:  50px;
