@@ -1,5 +1,5 @@
 .container {
-  width: 90vw;
+  width: 100vw;
   height: 120px;
   margin: 10px auto;
   display: grid;
@@ -9,6 +9,7 @@
   box-sizing: border-box;
 
 }
+
 
 .form-height {
   min-height: 100vh;
@@ -44,10 +45,10 @@
 
 
 .banner-exp .logo {
-  width:    400px;
+  width:    25vw;
   position: absolute;
   bottom:   0px;
-  left:     calc(50vw - 200px);
+  left:     40vw;
 }
 
 
