@@ -14,6 +14,10 @@
   min-height: 100vh;
 }
 
+h1, h2 {
+  font-size: 5vw;
+}
+
 .form_title {
   margin: 50px  30px ;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -44,10 +48,10 @@
 
 
 .banner-exp .logo {
-  width:    400px;
+  width:    25vw;
   position: absolute;
   bottom:   0px;
-  left:     calc(50vw - 200px);
+  left:     37.5vw;
 }
 
 
