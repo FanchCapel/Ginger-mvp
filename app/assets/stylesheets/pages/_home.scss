@@ -37,6 +37,7 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 50px;
 }
 
 
@@ -48,18 +49,20 @@ p {
 }
 
 .container-g {
-  position: absolute;
+  position: relative;
   top: 25vh;
   left: 5vw;
   color: white;
-}
-
-.container-g p {
   margin-bottom: 50px;
 }
 
+// .container-g p {
+//   margin-bottom: 50px;
+// }
+
 .btn-g {
-  margin: 0 auto;
+  margin-top: 30px;
+  // margin: 0 auto;
   border: solid;
   border-width: 1px;
   border-color: $ginger;
@@ -79,8 +82,8 @@ p {
 
 .choose h2{
   color: white;
-  margin-left: 10vw;
-  margin-top: 20px;
+  margin-left: 5vw;
+  margin-top: 50px;
 }
 
 // .cards {
