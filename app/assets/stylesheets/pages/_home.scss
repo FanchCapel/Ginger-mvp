@@ -26,7 +26,7 @@ a {
 }
 
 p {
-  font-size: 25px;
+  font-size: 3vw;
 }
 
 .banner {
@@ -42,10 +42,10 @@ p {
 
 
 .banner .logo {
-  width: 400px;
+  width: 25vw;
   position: absolute;
   bottom: 0px;
-  left: calc(50vw - 200px);
+  left: 40vw;
 }
 
 .container-g {
@@ -71,13 +71,13 @@ p {
   color: white;
   border-radius: 30px;
   padding: 10px;
-  width: 100%;
+  width-min: 40px;
 }
 
 .btn-g:hover {
   color: white;
   text-decoration: none;
-  transform: scale(1.05)
+  transform: scale(1.2)
 }
 
 .choose h2{
