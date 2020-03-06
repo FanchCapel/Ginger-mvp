@@ -122,8 +122,9 @@ puts "Creating message types..."
 @messageType = MessageType.new
 @messageType.message_type = "End"
 @messageType.day = 0
-@messageType.send_at = DateTime.parse('18:30:00') + Rational(message.experience.experience_slice.activity.duration, 1440)
-@messageType.content = 'Votre expérience se termine! J espère que vous avez apprécié? Merci de répondre à ce petit questionnaire pour nous aider à nous améliorer: <Link to form: https//forms.gle/LxTcSLniVGY441eW7>. Il est maintenant temps pour moi de vous dire au revoir, en espérant vous revoir bientôt! Votre majordome, Ginger.'
+# @messageType.send_at = DateTime.parse('18:30:00') + Rational(message.experience.experience_slice.activity.duration, 1440)
+@messageType.send_at = DateTime.parse('20:30:00')
+@messageType.content = 'J espère que vous avez apprécié votre expérience? Merci de répondre à ce petit questionnaire pour nous aider à nous améliorer: <Link to form: https//forms.gle/LxTcSLniVGY441eW7>. Il est maintenant temps pour moi de vous dire au revoir, en espérant vous revoir bientôt! Votre majordome, Ginger.'
 @messageType.save!
 puts "Done"
 
