@@ -59,7 +59,7 @@
         collection: ['En journée', 'En soirée'],
         wrapper: :vertical_collection_inline%>
       <%= f.input :budget_cents,
-        label: 'Votre budget',
+        label: 'Votre budget (CHF)',
         collection: [["150 CHF", 150], ["200 CHF", 200], ["250 CHF", 250], ["300 CHF", 300], ["350 CHF", 350], ["400 CHF", 400], ["450 CHF", 450], ["500 CHF", 500], ]%>
 
       <%= f.button :submit, class: 'btn-g', value: "Créer l'expérience" %>
