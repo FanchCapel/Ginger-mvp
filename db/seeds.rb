@@ -75,7 +75,7 @@ puts "Creating message types..."
 @messageType.message_type = "Day before"
 @messageType.day = -1
 @messageType.send_at = DateTime.parse('18:00:00')
-@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce' + message.experience.date.strftime(\'%d %m %y\') + '. Je vous donne donc rendez-vous à cette date à 18:30 ' + message.experience.experience_slices.activity.meeting_point + ' . Ne pas oublier de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
+@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce' + message.experience.date.strftime(\'%d %m %y\') + '. Je vous donne donc rendez-vous à cette date à 19:00 ' + message.experience.experience_slices.activity.meeting_point + ' . Ne pas oublier de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
 @messageType.save!
 
 # Message 2
@@ -98,7 +98,7 @@ puts "Creating message types..."
 @messageType = MessageType.new
 @messageType.message_type = "Welcome"
 @messageType.day = 0
-@messageType.send_at = DateTime.parse('18:30:00')
+@messageType.send_at = DateTime.parse('19:00:00')
 @messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' +  message.experience.experience_slice.activity.instruction"
 @messageType.save!
 

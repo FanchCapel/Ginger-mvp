@@ -15,7 +15,7 @@ export const selectedExperienceType = () => {
 		document.getElementById('experience_experience_type_2').checked = true;
 		document.getElementById('experience_both_experiences_selected').value = true;
     document.getElementById('new-butler-container-home').classList.add('d-flex');
-    
+
     budgetList.innerHTML = "";
     restOptionsArray.forEach((option) => {
       const el = document.createElement("option");
@@ -27,10 +27,10 @@ export const selectedExperienceType = () => {
 }
 
 export const setBudgetOptions = () => {
-  const expOptionsArray = [["", null],["150 CHF", 150], ["200 CHF", 200], ["250 CHF", 250], ["300 CHF", 300], ["350 CHF", 350], ["400 CHF", 400], ["450 CHF", 450], ["500 CHF", 500]];
+  const expOptionsArray = [["", null],["150 CHF", 150], ["275 CHF", 275]];
   const restOptionsArray = [["", null],["150 CHF", 150]];
   const budgetList = document.getElementById('experience_budget_cents');
-  
+
   const experienceSelected = document.getElementById('experience_experience_type_1')
   experienceSelected.addEventListener('click', (event) => {
     budgetList.innerHTML = "";
